@@ -1,0 +1,73 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>NASA Picture of the Day</title>
+    <link rel="stylesheet" href="../static/main/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../static/main/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="../static/main/css/templatemo-style.css">
+
+</head>
+<body>
+    <!-- Page Loader -->
+    <div id="loader-wrapper">
+        <div id="loader"></div>
+
+        <div class="loader-section section-left"></div>
+        <div class="loader-section section-right"></div>
+
+    </div>
+    <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+            <a class="navbar-brand" href="">
+                <i class="fas fa-film mr-2"></i>
+                NASA Picture of the Day
+            </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                <i class="fas fa-bars"></i>
+            </button>
+
+        </div>
+    </nav>
+
+
+
+    <div class="container-fluid tm-container-content tm-mt-60">
+        <div class="row mb-4">
+            <h2 class="col-12 tm-text-primary">{{ photo.name }}</h2>
+        </div>
+        <div class="row tm-mb-90">
+
+            <div class="col-xl-8 col-lg-7 col-md-6 col-sm-12">
+                <img src="{{ photo.img.url}}" alt="{{ photo.name }}" class="img-fluid">
+            </div>
+
+            <div class="col-xl-4 col-lg-5 col-md-6 col-sm-12">
+                <div class="tm-bg-gray tm-video-details">
+
+                    <div class="mb-4 d-flex flex-wrap">
+
+                    </div>
+                    <div class="mb-4">
+                        <h3 class="tm-text-gray-dark mb-3">Description</h3>
+                        <p>{{ photo.description }}</p>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+
+    </div>
+
+
+    
+    <script src="../static/main/js/plugins.js"></script>
+    <script>
+        $(window).on("load", function() {
+            $('body').addClass('loaded');
+        });
+    </script>
+</body>
+</html>
